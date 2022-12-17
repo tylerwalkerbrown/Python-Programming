@@ -1,1 +1,5 @@
-# Python-Programming
+# Python-Programming![output_58_1](https://user-images.githubusercontent.com/94020684/208269897-f557d04d-6924-4074-9349-b98b2e883e79.png)
+![output_43_1](https://user-images.githubusercontent.com/94020684/208269900-d72a46ad-e0bd-4ce8-8010-67cde22873ab.png)
+![output_35_0](https://user-images.githubusercontent.com/94020684/208269901-71b7c905-691f-48bd-967f-1a382889770a.png)
+![output_30_0](https://user-images.githubusercontent.com/94020684/208269902-bb9f47bc-bcc9-4802-8792-e834e38bc6ea.png)
+![output_25_1](https://user-images.githubusercontent.com/94020684/208269903-1816a152-0203-4e8e-bed6-6f85cdabd752.png)
