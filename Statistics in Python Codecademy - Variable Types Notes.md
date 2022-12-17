@@ -27721,6 +27721,168 @@ movies.info()
     memory usage: 1023.7+ KB
 
 
+# Introduction to Visualizing a Distribution of Quantitative Data
+
+![image-3.png](attachment:image-3.png)![image-4.png](attachment:image-4.png)
+
+The right-skew indicates that the mean is larger than the median, because there are a lot of values to the right of the peak.
+
+# Quartile Ranges
+
+![image.png](attachment:image.png)![image-2.png](attachment:image-2.png)
+
+
+```python
+import os 
+import pandas as pd
+from scipy.stats import iqr
+import numpy as np
+import matplotlib.pyplot as plt
+
+```
+
+
+```python
+os.chdir("Desktop/mojo")
+```
+
+
+```python
+total = pd.read_csv("2019_reports.csv")
+```
+
+
+```python
+total.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 840 entries, 0 to 839
+    Data columns (total 30 columns):
+     #   Column                    Non-Null Count  Dtype  
+    ---  ------                    --------------  -----  
+     0   date/time                 840 non-null    object 
+     1   settlement id             840 non-null    int64  
+     2   type                      840 non-null    object 
+     3   order id                  779 non-null    object 
+     4   sku                       780 non-null    object 
+     5   description               840 non-null    object 
+     6   quantity                  780 non-null    float64
+     7   marketplace               808 non-null    object 
+     8   account type              840 non-null    object 
+     9   fulfillment               777 non-null    object 
+     10  order city                777 non-null    object 
+     11  order state               777 non-null    object 
+     12  order postal              777 non-null    object 
+     13  tax collection model      270 non-null    object 
+     14  product sales             840 non-null    float64
+     15  product sales tax         840 non-null    float64
+     16  shipping credits          840 non-null    float64
+     17  shipping credits tax      840 non-null    float64
+     18  gift wrap credits         840 non-null    int64  
+     19  giftwrap credits tax      840 non-null    int64  
+     20  Regulatory Fee            840 non-null    int64  
+     21  Tax On Regulatory Fee     840 non-null    int64  
+     22  promotional rebates       840 non-null    int64  
+     23  promotional rebates tax   840 non-null    int64  
+     24  marketplace withheld tax  840 non-null    float64
+     25  selling fees              840 non-null    float64
+     26  fba fees                  840 non-null    int64  
+     27  other transaction fees    840 non-null    int64  
+     28  other                     840 non-null    object 
+     29  total                     840 non-null    object 
+    dtypes: float64(7), int64(9), object(14)
+    memory usage: 197.0+ KB
+
+
+
+```python
+total = pd.DataFrame(total)
+```
+
+
+```python
+#Calculating the interquartile range
+iqr(total['selling fees'])
+```
+
+
+
+
+    2.63
+
+
+
+
+```python
+#Hhould be flipped
+abs(np.quantile(total['selling fees'],.25) - np.quantile(total['selling fees'],.75))
+```
+
+
+
+
+    2.63
+
+
+
+
+```python
+#Examining outliers
+plt.boxplot([total['selling fees'],total['product sales tax']], labels = ['a','b'])
+```
+
+
+
+
+    {'whiskers': [<matplotlib.lines.Line2D at 0x7f7fc8044160>,
+      <matplotlib.lines.Line2D at 0x7f7fe8ca2670>,
+      <matplotlib.lines.Line2D at 0x7f7fe8c94490>,
+      <matplotlib.lines.Line2D at 0x7f7fe8c94250>],
+     'caps': [<matplotlib.lines.Line2D at 0x7f7fe8ca2e80>,
+      <matplotlib.lines.Line2D at 0x7f7fe8ca24c0>,
+      <matplotlib.lines.Line2D at 0x7f7ffaef4be0>,
+      <matplotlib.lines.Line2D at 0x7f7ffaef4250>],
+     'boxes': [<matplotlib.lines.Line2D at 0x7f7fc8044af0>,
+      <matplotlib.lines.Line2D at 0x7f7fe8c94cd0>],
+     'medians': [<matplotlib.lines.Line2D at 0x7f7fe8ca2b80>,
+      <matplotlib.lines.Line2D at 0x7f7ffaef47f0>],
+     'fliers': [<matplotlib.lines.Line2D at 0x7f7fe8ca2a60>,
+      <matplotlib.lines.Line2D at 0x7f7ffaef4280>],
+     'means': []}
+
+
+
+
+    
+![png](output_58_1.png)
+    
+
+
+# Introduction to Summary Statistics for Categorial Data
+
+- Calculate frequencies and proportions for categorical variables
+- Summarize central tendency and spread for ordinal categorical variables using appropriate summary statistics
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+# Hypothesis Testing 
+
+![image.png](attachment:image.png)
+
 
 ```python
 
